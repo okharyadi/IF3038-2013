@@ -1,0 +1,260 @@
+p, h1, form, button{
+	border:0;
+	margin:0;
+	padding:0;
+	font-weight: bold;
+}
+body {
+	background-image: url(images2/bggrid.jpg);
+	background-repeat: repeat-x;
+	background-color: #D6E8F4;
+}
+
+textarea { border: 1; font: 14px Georgia, Serif; resize:none;}
+textarea:hover, textarea:focus, #items td.total-value textarea:hover, #items td.total-value textarea:focus, .delete:hover { background-color:#EEFF88; }
+
+input { border: 1; font: 14px Georgia, Serif; overflow: hidden; resize: none; }
+input:hover, input:focus, #items td.total-value iinput:hover, #items td.total-value text:focus, .delete:hover { background-color:#f5c816; }
+
+#wrapper button {
+	position:absolute;
+	left:403;
+	top:388;
+	margin-left:150px;
+	width:125px;
+	height:31px;
+}
+#aksi {
+	position:absolute;
+	left:850px;
+	top:197px;
+	width:132px;
+	height:31px;
+	z-index:1;
+	text-align: center;
+}
+#aksi2 {
+	position:absolute;
+	left:841px;
+	top:602px;
+	width:132px;
+	height:31px;
+	z-index:1;
+	text-align: center;
+}
+#wrapper {
+	position: absolute;
+	height: 138px;
+	width: 347px;
+	left: 667px;
+	top: 43px;
+	bottom: 50px;
+}
+#wrapper2 {
+	position: absolute;
+	height: 599px;
+	width: 461px;
+	left: 162px;
+	top: 41px;
+	bottom: 50px;
+}
+
+#wrapper3 {
+	position: absolute;
+	height: 138px;
+	width: 347px;
+	left: 667px;
+	top: 256px;
+	bottom: 50px;
+}
+
+#signin {
+	position:absolute;
+	left:127px;
+	top:23px;
+	width:157px;
+	height:23px;
+	z-index:1;
+}
+
+#register {
+	position:absolute;
+	left:120px;
+	top:25px;
+	width:157px;
+	height:23px;
+	z-index:1;
+}
+
+#textusername {
+	position:absolute;
+	left:35px;
+	top:71px;
+	width:93px;
+	height:23px;
+	z-index:1;
+}
+
+#textpassword {
+	position:absolute;
+	left:36px;
+	top:109px;
+	width:93px;
+	height:23px;
+	z-index:1;
+}
+
+#inputnama {
+	position:absolute;
+	left:133px;
+	top:72px;
+	width:180px;
+	height:21px;
+	z-index:1;
+}
+
+#inputpass {
+	position:absolute;
+	left:133px;
+	top:110px;
+	width:184px;
+	height:21px;
+	z-index:2;
+}
+#registernama {
+	position:absolute;
+	left:130px;
+	top:80px;
+	width:170px;
+	height:21px;
+	z-index:1;
+}
+
+#registerpass {
+	position:absolute;
+	left:141px;
+	top:113px;
+	width:172px;
+	height:21px;
+	z-index:2;
+}
+
+#registeremail {
+	position:absolute;
+	left:131px;
+	top:218px;
+	width:174px;
+	height:23px;
+	z-index:1;
+}
+
+#registerfullname {
+	position:absolute;
+	left:131px;
+	top:182px;
+	width:174px;
+	height:23px;
+	z-index:1;
+}
+
+#registeravatar {
+	position:absolute;
+	left:130px;
+	top:288px;
+	width:174px;
+	height:23px;
+	z-index:1;
+}
+
+#registerpassword {
+	position:absolute;
+	left:130px;
+	top:111px;
+	width:215px;
+	height:21px;
+	z-index:1;
+}
+
+#registerpassword2 {
+	position:absolute;
+	left:131px;
+	top:147px;
+	width:173px;
+	height:21px;
+	z-index:1;
+}
+
+#registertextpassword {
+	position:absolute;
+	left:28px;
+	top:111px;
+	width:97px;
+	height:23px;
+	z-index:1;
+}
+
+#registertextavatar {
+	position:absolute;
+	left:28px;
+	top:288px;
+	width:97px;
+	height:23px;
+	z-index:1;
+}
+
+#registertextpassword2 {
+	position:absolute;
+	left:28px;
+	top:146px;
+	width:99px;
+	height:23px;
+	z-index:1;
+}
+
+#registertextusername {
+	position:absolute;
+	left:28px;
+	top:80px;
+	width:98px;
+	height:23px;
+	z-index:1;
+}
+
+#registertextemail {
+	position:absolute;
+	left:30px;
+	top:219px;
+	width:98px;
+	height:23px;
+	z-index:1;
+}
+
+#registertextfullname {
+	position:absolute;
+	left:28px;
+	top:183px;
+	width:98px;
+	height:23px;
+	z-index:1;
+}
+
+#registertexttgl {
+	position:absolute;
+	left:28px;
+	top:249px;
+	width:98px;
+	height:23px;
+	z-index:1;
+}
+
+#tanggallahir {
+	position:absolute;
+	left:130px;
+	top:248px;
+	width:181px;
+	height:23px;
+	z-index:1;
+}
+#aksi table {
+	text-align: center;
+}

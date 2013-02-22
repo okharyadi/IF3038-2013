@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Login Page</title>
+<link rel="stylesheet" href="logincss.css" type="text/css">
+<script language="javascript">
+function validasi(form){
+  if (form.username.value == ""){
+    alert("Anda belum mengisikan Username.");
+    form.username.focus();
+    return (false);
+  }
+     
+  if (form.password.value == ""){
+    alert("Anda belum mengisikan Password.");
+    form.password.focus();
+    return (false);
+  }
+  
+  if (form.username.value == "admin" && form.password.value == "admin"){
+    alert("Welcome");
+    //form.username.focus();
+	setTimeout("location.href = 'dashboard.html';",1);
+    return (true);
+  }else{
+		alert("Password Salah");
+		return (false);  
+  }
+  
+  return (true);
+}
+
+
+function validasi2(form2){
+  if (form2.registerusername.value == ""){
+    alert("Anda belum mengisikan Username.");
+    form2.registerusername.focus();
+    return (false);
+  }
+  
+  //buat panjang karakter username min 5 karakter
+  var panjang= document.form2.registerusername.value;
+  panjang= panjang.length;
+  if(panjang < 5){
+	alert("Panjang username minimal 5 karakter");
+	form2.registerusername.focus();  
+	return (false);  
+  }
+     
+  if (form2.registerpassword.value == ""){
+    alert("Anda belum mengisikan Password.");
+    form2.registerpassword.focus();
+    return (false);
+  }
+  
+  if (form2.registerusername.value == form2.registerpassword.value){
+    alert("Username dan Password Jangan sama!!");
+    form2.registerusername.focus();
+    return (false);
+  }
+  
+  if (form2.registerpassword.value == form2.registeremail.value){
+    alert("Email dan Password Jangan sama!!");
+    form2.registerpassword.focus();
+    return (false);
+  }
+  
+  if (form2.registerpassword2.value == ""){
+    alert("Anda belum mengisikan Password.");
+    form2.registerpassword2.focus();
+    return (false);
+  }
+  
+  if (form2.registerpassword.value != form2.registerpassword2.value){
+    alert("Password Tidak sama");
+	form2.registerpassword.focus();
+    return (false);
+  }
+  
+  if (form2.registeremail.value == ""){
+    alert("Anda belum mengisikan Email.");
+    form2.registeremail.focus();
+    return (false);
+  }
+  
+  	var email = document.form2.registeremail.value;
+	var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	if (!filter.test(email)) {
+	alert('Please provide a valid email address');
+	form2.registeremail.focus;
+	return false;
+	}
+
+  
+  if (form2.registerfullname.value == ""){
+    alert("Anda belum mengisikan Full name.");
+    form2.registerfullname.focus();
+    return (false);
+  }
+  
+  if (form2.pic.value == ""){
+    alert("Anda belum memilih Avatar.");
+    form2.registerfullname.focus();
+    return (false);
+  }
+  
+  //buat panjang karakter username min 8 karakter
+  var panjangpass= document.form2.registerpassword.value;
+  panjangpass= panjangpass.length;
+  if(panjangpass < 8){
+	alert("Panjang password minimal 8 karakter");
+	form2.registerpassword.focus();  
+	return (false);  
+  }
+  
+  //buat upload picture
+  var ext = document.form2.pic.value;
+  ext = ext.substring(ext.length-3,ext.length);
+  ext = ext.toLowerCase();
+  if(ext != 'jpg' && ext != 'jpeg') {
+    //alert('You selected a .'+ext+' file; please select a .jpg file instead!');
+	alert("File harus berekstensi JPG atau JPEG");
+    return (false); }
+  
+  setTimeout("location.href = 'dashboard.html';",1);
+  return (true);
+}
+</script>
+
+</head>
+
+<body OnLoad="document.login.username.registerusername.focus();">
+<div id="wrapper2"><img src="cover.png" width="464" height="637" />  </div>
+<form name="form" action="" method="POST" onSubmit="return validasi(this)">
+  <div id="wrapper"><img src="untitled-1.png" width="332" height="200" /> 
+<div id="signin">
+  <p>SIGN IN</p></div>
+  
+<div id="textusername">
+  <p>Username</p></div>
+  
+<div id="textpassword">
+  <p>Password</p></div>
+  
+  <div id="inputnama">
+    <input name="username" type="text" size="25" maxlength="25" />
+</div>
+
+<div id="inputpass">
+<input name="password" type="password" size="25" maxlength="25" />
+</div>
+
+</div>
+
+
+
+<div id="aksi">
+  <table width="127" border="0">
+    <tr>
+      <td width="59"><input name="login" type="submit" value="Log In" /></td>
+      <td width="58"><input name="reset" type="reset" value="Reset" /></td>
+    </tr>
+  </table>
+</div>
+</form>
+
+<form name="form2" action="" method="POST" enctype="multipart/form-data" onSubmit="return validasi2(this)">
+<div id="wrapper3"><img src="untitled-2.png" width="332" height="392" /> 
+<div id="register"><p>REGISTER</p></div>
+  <div id="registernama">
+  <input name="registerusername" type="text" size="25" maxlength="25" />
+</div>
+
+<div id="registeremail"> <input name="registeremail" type="text" size="25" maxlength="25" /></div>
+<div id="registerfullname"> <input name="registerfullname" type="text" size="25" maxlength="25" /></div>
+<div id="registerpassword2">
+  <input name="registerpassword2" type="password" size="25" maxlength="25" /></div>
+  <div id="registerpassword"><input name="registerpassword" type="password" size="25" maxlength="25" /></div>
+<div id="registertextusername"><p>Username</p></div>
+<div id="registertextemail"><p>Email</p></div>
+<div id="registertextpassword"><p>Password</p></div>
+<div id="registertextpassword2"><p>Re-Password</p></div>
+
+<div id="registertexttgl">
+  <p>Birthday</p></div>
+<div id="registertextusername"></div>
+<div id="registertextfullname"><p>Full Name</p></div>
+<div id="tanggallahir"><select name="tanggallaporan" id="tanggallaporan">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+  <option value="13">13</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="17">17</option>
+  <option value="18">18</option>
+  <option value="19">19</option>
+  <option value="20">20</option>
+  <option value="21">21</option>
+  <option value="22">22</option>
+  <option value="23">23</option>
+  <option value="24">24</option>
+  <option value="25">25</option>
+  <option value="26">26</option>
+  <option value="27">27</option>
+  <option value="28">28</option>
+  <option value="29">29</option>
+  <option value="30">30</option>
+  <option value="31">31</option>
+</select>
+  -
+  <select name="tanggallaporan" id="tanggallaporan">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="12">12</option>
+</select>-
+<select name="tanggallaporan" id="tanggallaporan">
+  <option value="1955">1955</option>
+  <option value="1956">1956</option>
+  <option value="1957">1957</option>
+  <option value="1958">1958</option>
+  <option value="1959">1959</option>
+  <option value="1960">1960</option>
+  <option value="1961">1961</option>
+  <option value="1962">1962</option>
+  <option value="1963">1963</option>
+  <option value="1964">1964</option>
+  <option value="1965">1965</option>
+  <option value="1966">1966</option>
+  <option value="1967">1967</option>
+  <option value="1968">1968</option>
+  <option value="1969">1969</option>
+  <option value="1970">1970</option>
+  <option value="1971">1971</option>
+  <option value="1972">1972</option>
+  <option value="1973">1973</option>
+  <option value="1974">1974</option>
+  <option value="1975">1975</option>
+  <option value="1976">1976</option>
+  <option value="1977">1977</option>
+  <option value="1978">1978</option>
+  <option value="1979">1979</option>
+  <option value="1980">1980</option>
+  <option value="1981">1981</option>
+  <option value="1982">1982</option>
+  <option value="1983">1983</option>
+  <option value="1984">1984</option>
+  <option value="1985">1985</option>
+  <option value="1986">1986</option>
+  <option value="1987">1987</option>
+  <option value="1988">1988</option>
+  <option value="1989">1989</option>
+  <option value="1990">1990</option>
+</select>
+</div>
+<div id="registertextpassword"><p>Password</p></div>
+<div id="registertextavatar"><p>Avatar</p></div>
+<div id="registeravatar"><input name="pic" type="file" accept="image/jpeg" size="14" /></div>
+</div>
+
+</div>
+<div id="aksi2">
+  <table width="127" border="0">
+    <tr>
+      <td width="59"><input name="login" type="submit" value="Register" /></td>
+      <td width="58"><input name="reset" type="reset" value="Reset" /></td>
+    </tr>
+  </table>
+</div>
+</form>
+</body>
+</html>

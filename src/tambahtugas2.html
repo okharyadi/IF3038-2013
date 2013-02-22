@@ -1,0 +1,180 @@
+﻿<html>
+<head>
+<title>index</title>
+<link rel="stylesheet" href="clccss.css" type="text/css">
+<link rel="stylesheet" href="css/tambahtugas2.css" type="text/css">
+</head>
+<script language="javascript">
+function validasi(form){
+  if (form.namatugas.value == ""){
+    alert("Anda belum mengisikan Nama Tugas.");
+    form.namatugas.focus();
+    return (false);
+  }
+  
+  var namatugas = document.form.namatugas.value;
+	var filter = /^(?![._-].*|.*[._-]$)[\w.-]+$/;
+	if (!filter.test(namatugas)) {
+	alert('Jangan Pakai karakter aneh!!');
+	form.namatugas.focus;
+	return false;
+	}
+	
+	var panjangnamatugas= document.form.namatugas.value;
+  panjangpass= panjangnamatugas.length;
+  if(panjangpass > 25){
+	alert("Panjang Nama Tugas maksimal 25 karakter");
+	form.namatugas.focus();  
+	return (false);  
+  }
+     
+  if (form.attachment.value == ""){
+    alert("Anda belum mengisi Attachment.");
+    form.attachment.focus();
+    return (false);
+  }
+  
+  //buat upload picture
+  var ext = document.form.attachment.value;
+  ext = ext.substring(ext.length-3,ext.length);
+  ext = ext.toLowerCase();
+  if(ext != 'jpg' && ext != 'jpeg' && ext != 'avi' && ext != 'docx' && ext != 'doc' && ext != 'ppt' && ext != 'pdf') {
+    //alert('You selected a .'+ext+' file; please select a .jpg file instead!');
+	alert("ekstensi File tidak diijinkan!!");
+    return (false); }
+  
+  if (form.deadline.value == ""){
+    alert("Anda belum mengisikan Deadline.");
+    form.deadline.focus();
+    return (false);
+  }
+  
+  if (form.tag.value == ""){
+    alert("Anda belum mengisikan Tag.");
+    form.tag.focus();
+    return (false);
+  }
+  
+  alert("Tambah Tugas Berhasil");
+  return (true);
+}
+</script>
+
+<body class="bg_main" OnLoad="document.login.namatugas.focus();">
+<a name="top"></a>
+<table id="outer" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td valign="top"><div id="main_inner">
+        <!-- top areas begin-->
+      <div id="logo"><a href="dashboard.html"><img src="logo.jpg" width="98" height="94"></a><br><br></div>
+        <!-- top areas end-->
+        <div class="clear"> </div>
+        <!-- Path begin-->
+        <div id="can_pathway"> <span class="pathway"><a href="dashboard.html">Home</a> -<a href="profile.html">Profile</a> - <a href="login.html">Logout</a></span>-<b>SEARCH</b>
+<input type="text" value="search" name="textfield" id="textfield">
+        <input type="submit" name="search" id="button" value="Search"> </div>
+        <!-- Path end-->
+              <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td width="171" valign="top"><div id="rightmain">
+                      <table cellpadding="0" cellspacing="0" class="moduletable">
+                        <tr>
+                          <td><table width="100%" border="0" cellpadding="0" cellspacing="0">
+                      <tr onClick="javascript:void window.open('kategoribaru.html','1361268676358','width=400,height=400,toolbar=0,menubar=0,location=0,status=1,scrollbars=1,resizable=1,left=0,top=0');return false;" class="classname">
+                                <td width="34"><img src="gambar/online.png" width="30" height="30"></a></td>
+                                <td width="132"><strong>Create a New Category</strong></td>
+                              </tr>
+                               <tr onClick="document.location = 'tambahtugas.html';" class="classname">
+                                <td width="34"><img src="gambar/disposisi.png" width="30" height="30"></td>
+                                <td width="132"><strong>Add a New Task</strong></td>
+                              </tr>
+                              
+                            </table><br><div align="center">
+						  <table width="100%" border="0" cellpadding="1" cellspacing="1">
+							<tr>
+    						  <td height="25" align="center">&nbsp;</td>
+  							</tr>
+						  </table>
+						  </div>
+						  </td>
+                        </tr>
+                      </table>
+                    </div></td>
+                  <td width="10" style="width:1px;">&nbsp;</td>
+                  <td width="571" valign="top"><div class="left_edge">
+                      <div class="right_edge">
+                        <div class="top_edge">
+                          <div class="top_lcorner">
+                            <div class="top_rcorner"> </div>
+                          </div>
+                        </div>
+                        <div class="corner_inner">
+                          <div id="main_body">
+                       	    <p>
+                       	      <!-- CONTENT -->                   	        </p>
+                              <form name="form" action="tambahtugas2.html" method="post" onSubmit="return validasi(this)">
+                       	    <table class="CSSTable" width="100%">
+                       	      <tr>
+                       	        <td colspan="2">TAMBAH TUGAS</td>
+                   	          </tr>
+                       	      <tr>
+                       	        <td>Nama Tugas</td>
+                       	        <td><label for="textfield"></label>
+                   	            <input type="text" name="namatugas" id="textfield"></td>
+                   	          </tr>
+                       	      <tr>
+                       	        <td>Attachment</td>
+                       	        <td><input type="file" name="attachment" id="textfield2"></td>
+                   	          </tr>
+                       	      <tr>
+                       	        <td height="40">Deadline</td>
+                       	        <td><input class="plain" name="deadline" value="" size="15">
+                                  <a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form.deadline);return false;" ><img name="popcal" align="absmiddle" src="calender/calbtn.gif" width="34" height="22" border="0" alt=""></a> <font size=-1> <BR>
+                                  </font>
+                                  <iframe width=174 height=189 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js" src="ipopeng.htm" scrolling="no" frameborder="0" style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;">
+</iframe>
+</td>
+                   	          </tr>
+                       	      <tr>
+                       	        <td>Assigne</td>
+                       	        <td><input type="text" name="assigne" id="textfield4"></td>
+                   	          </tr>
+                       	      <tr>
+                       	        <td width="21%">Tag</td>
+                       	        <td width="79%"><input type="text" name="tag" id="textfield5"></td>
+                   	          </tr>
+                       	      <tr>
+                       	        <td>&nbsp;</td>
+                       	        <td><input type="submit" name="button" id="button" value="Submit"></td>
+                   	          </tr>
+                   	        </table>
+                            </form>
+                       	    <p>&nbsp;</p>
+                       	    <p>&nbsp;</p>
+                          </div>
+                        </div>
+                        <div class="bottom_edge">
+                          <div class="bot_lcorner">
+                            <div class="bot_rcorner"> </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div></td>
+                </tr>
+              </table>
+            </div>
+            <!-- main end-->
+            <div class="clear"> </div>
+        <!-- bottom begin-->
+        <div class="clear"> </div>
+        <div class="bottomcontainer">
+        </div>
+        <div class="clear"> </div>
+        <div id="footer">  
+        </div>
+        <!-- bottom end-->
+    </td>
+  </tr>
+</table>
+</body>
+</html>
